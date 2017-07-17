@@ -1,5 +1,9 @@
 package main
 
+// refer to below link:
+// https://openweathermap.org/api
+// 
+
 import (
 	"encoding/json"
 	"flag"
@@ -10,7 +14,7 @@ import (
 )
 
 const (
-	AppId = ""
+	AppId = "d2f9a0e5896d7bc5a117055de7fcc46a"
 )
 
 const (
@@ -24,7 +28,7 @@ const (
 )
 
 type TCoord struct {
-	Lon, Lat float64
+	Lon, Lat float32
 }
 
 type TWeather struct {
@@ -33,9 +37,10 @@ type TWeather struct {
 }
 
 type TMain struct {
-	Temp               float64
+	Temp               float32
 	Pressure, Humidity int
-	TempMin, TempMax   float64
+	TempMin, TempMax   float32
+	// Sea_level, Grnd_level 
 }
 
 type TWind struct {
@@ -46,9 +51,17 @@ type TClouds struct {
 	All int
 }
 
+type TRain struct {
+	// 3h int
+}
+
+type TSnow struct {
+	// 3h int
+}
+
 type TSys struct {
 	Type, Id        int
-	Message         float64
+	Message         float32
 	Country         string
 	Sunrise, Sunset int
 }
